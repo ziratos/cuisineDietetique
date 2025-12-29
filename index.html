@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdora - Le Jardin Secret</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="logo-container">
+                <div class="leaf-icon">🌿</div>
+                <h1 class="restaurant-name">Verdora</h1>
+            </div>
+            <p class="slogan">Le Jardin Secret</p>
+            <p class="tagline">Cuisine Saine & Naturelle</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#menu-book">Menu Complet</a>
+        <a href="#starters">Entrées</a>
+        <a href="#mains">Plats</a>
+        <a href="#desserts">Desserts</a>
+        <a href="#drinks">Boissons</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Menu Book Section -->
+        <section id="menu-book" class="menu-book-section">
+            <h2 class="section-title">📖 Notre Menu</h2>
+            <p class="menu-instruction">Glissez ou faites défiler pour parcourir le menu</p>
+            <div class="book-container">
+                <div class="book-viewer" id="book-viewer">
+                    <div class="pages-wrapper" id="pages-wrapper">
+                        <div class="page-slide active" data-page="0">
+                            <img src="carte/0.png" alt="Menu Page 1" class="menu-page-image">
+                        </div>
+                        <div class="page-slide" data-page="1">
+                            <img src="carte/1.PNG" alt="Menu Page 2" class="menu-page-image">
+                        </div>
+                        <div class="page-slide" data-page="2">
+                            <img src="carte/2.PNG" alt="Menu Page 3" class="menu-page-image">
+                        </div>
+                        <div class="page-slide" data-page="3">
+                            <img src="carte/3.PNG" alt="Menu Page 4" class="menu-page-image">
+                        </div>
+                        <div class="page-slide" data-page="4">
+                            <img src="carte/4.PNG" alt="Menu Page 5" class="menu-page-image">
+                        </div>
+                        <div class="page-slide" data-page="5">
+                            <img src="carte/5.PNG" alt="Menu Page 6" class="menu-page-image">
+                        </div>
+                        <div class="page-slide" data-page="6">
+                            <img src="carte/6.PNG" alt="Menu Page 7" class="menu-page-image">
+                        </div>
+                        <div class="page-slide" data-page="7">
+                            <img src="carte/7.PNG" alt="Menu Page 8" class="menu-page-image">
+                        </div>
+                        <div class="page-slide" data-page="8">
+                            <img src="carte/8.png" alt="Menu Page 9" class="menu-page-image">
+                        </div>
+                    </div>
+                    <div class="swipe-indicators">
+                        <div class="swipe-arrow left" id="swipe-left">‹</div>
+                        <div class="swipe-arrow right" id="swipe-right">›</div>
+                    </div>
+                </div>
+                <div class="page-dots" id="page-dots">
+                    <span class="dot active" data-page="0"></span>
+                    <span class="dot" data-page="1"></span>
+                    <span class="dot" data-page="2"></span>
+                    <span class="dot" data-page="3"></span>
+                    <span class="dot" data-page="4"></span>
+                    <span class="dot" data-page="5"></span>
+                    <span class="dot" data-page="6"></span>
+                    <span class="dot" data-page="7"></span>
+                    <span class="dot" data-page="8"></span>
+                </div>
+                <div class="page-counter">
+                    <span id="current-page">1</span> / <span id="total-pages">9</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers -->
+        <section class="special-offers">
+            <h2 class="section-title">⭐ Offres Spéciales</h2>
+            <div class="offers-grid">
+                <div class="offer-card highlight">
+                    <img src="carte/plats principaux/pavé saumon.PNG" alt="Pavé de saumon" class="offer-image">
+                    <div class="offer-content">
+                        <div class="offer-badge">Offre</div>
+                        <h3>Plat Spécial</h3>
+                        <p class="offer-price">$10.00</p>
+                        <p class="offer-description">Notre spécialité du chef</p>
+                        <div class="offer-details">
+                            <p class="offer-details-title">Plat du jour:</p>
+                            <p class="offer-item"><strong>Pavé de saumon rôti aux épices tunisiennes</strong></p>
+                            <p class="offer-ingredients">Saumon frais, tabil, curcuma, citron, boulgour aux légumes, courgette, carotte, sauce moutarde-miel légère, yaourt nature</p>
+                            <p class="offer-note">Riche en oméga-3 et protéines • Saveurs méditerranéennes authentiques</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card highlight">
+                    <img src="carte/entré/chorba tunisienne.PNG" alt="Menu Spécial" class="offer-image">
+                    <div class="offer-content">
+                        <div class="offer-badge">Menu</div>
+                        <h3>Menu Spécial</h3>
+                        <p class="offer-price">$9.00</p>
+                        <p class="offer-description">Entrée + Plat + Dessert + Boisson</p>
+                        <div class="offer-details">
+                            <p class="offer-details-title">Menu complet:</p>
+                            <p class="offer-item">🥗 <strong>Entrée:</strong> Chorba tunisienne allégée</p>
+                            <p class="offer-item">🍽 <strong>Plat:</strong> Brochette de poulet grillé ail & citron confit</p>
+                            <p class="offer-item">🍰 <strong>Dessert:</strong> Yaourt grec aux figues rôties</p>
+                            <p class="offer-item">🥤 <strong>Boisson:</strong> Thé glacé maison sans sucre</p>
+                            <p class="offer-note">Menu équilibré et nutritif • Saveurs tunisiennes authentiques</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Starters -->
+        <section id="starters" class="menu-section">
+            <h2 class="section-title">🥗 Entrées</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="carte/entré/tartare de betterave.PNG" alt="Tartare de betterave rôtie" class="menu-image">
+                    <div class="item-header">
+                        <h3>Tartare de betterave rôtie à la tunisienne</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Betterave rôtie, carottes râpées, persil frais, huile d'olive, épices tunisiennes</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/entré/salade de poichiche.PNG" alt="Salade de pois chiches" class="menu-image">
+                    <div class="item-header">
+                        <h3>Salade de pois chiches, tomates cerises et harissa douce</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Pois chiches, tomates cerises, oignon rouge, coriandre fraîche, huile d'olive, harissa douce</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/entré/salade de fenouil.PNG" alt="Salade de fenouil" class="menu-image">
+                    <div class="item-header">
+                        <h3>Salade de fenouil, orange et olives noires</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Fenouil émincé, quartiers d'orange, olives noires, menthe fraîche, huile d'olive, cumin</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/entré/salade tunisienne de quinoa.PNG" alt="Salade tunisienne de quinoa" class="menu-image">
+                    <div class="item-header">
+                        <h3>Salade tunisienne quinoa et poivrons grillés</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Quinoa bio, poivrons rouges et jaunes grillés, câpres, persil frais, huile d'olive</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/entré/soupe legere de lentille.PNG" alt="Soupe légère de lentilles" class="menu-image">
+                    <div class="item-header">
+                        <h3>Soupe légère de lentilles corail au curcuma et menthe</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Lentilles corail, curcuma, menthe fraîche, légumes (carottes, oignon, céleri), épices</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/entré/velouté de carotte.PNG" alt="Velouté de carottes" class="menu-image">
+                    <div class="item-header">
+                        <h3>Velouté de carottes et fenouil parfumé au cumin et citron confit</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Carottes, fenouil, cumin, citron confit, huile d'olive, bouillon de légumes</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/entré/chorba tunisienne.PNG" alt="Chorba tunisienne" class="menu-image">
+                    <div class="item-header">
+                        <h3>Chorba tunisienne allégée aux légumes et poulet effiloché</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Poulet effiloché, carottes, courgettes, céleri, tomates concassées, vermicelles, citron, coriandre</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Courses -->
+        <section id="mains" class="menu-section">
+            <h2 class="section-title">🍽 Plats Principaux</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="carte/plats principaux/crevette sauté.PNG" alt="Crevettes sautées" class="menu-image">
+                    <div class="item-header">
+                        <h3>Crevettes sautées citron-ail, riz "à notre façon"</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Crevettes fraîches, citron, ail, persil frais, harissa douce, riz basmati, légumes</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/plats principaux/pavé saumon.PNG" alt="Pavé de saumon" class="menu-image">
+                    <div class="item-header">
+                        <h3>Pavé de saumon rôti aux épices tunisiennes</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Saumon, tabil, curcuma, citron, boulgour, courgette, carotte, sauce moutarde-miel, yaourt nature</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/plats principaux/gargoulette d'agneau.PNG" alt="Gargoulette d'agneau" class="menu-image">
+                    <div class="item-header">
+                        <h3>Gargoulette d'agneau diététique à notre façon</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Agneau maigre, ail, oignon, carotte, courgette, tomate, laurier, romarin, huile d'olive, citron</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/plats principaux/cote veau.PNG" alt="Côte de veau" class="menu-image">
+                    <div class="item-header">
+                        <h3>Côte de veau poêlée minute, champignons & ail confit</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Côte de veau, champignons émincés, ail confit, pomme de terre, olives noires, herbes</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/plats principaux/brochette de poulet.PNG" alt="Brochette de poulet" class="menu-image">
+                    <div class="item-header">
+                        <h3>Brochette de poulet grillé ail & citron confit</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Blanc de poulet, ail écrasé, citron confit, paprika doux, courgette, poivron, oignon, herbes</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/plats principaux/calamar farci.PNG" alt="Calamar farci" class="menu-image">
+                    <div class="item-header">
+                        <h3>Calamar farci léger quinoa & petits légumes</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Calamar, quinoa, courgette, carotte, poivron, citron, ail, herbes, spaghetti à l'encre de seiche, fruits de mer</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/plats principaux/supreme de poulet.PNG" alt="Suprême de poulet" class="menu-image">
+                    <div class="item-header">
+                        <h3>Suprême de poulet farci épinards & fruits secs</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Suprême de poulet, épinards vapeur, fruits secs (amandes, noix), ail, pomme de terre, yaourt nature 0%, blanc d'œuf, sauce suprême</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/plats principaux/filet daurade.PNG" alt="Filet de daurade" class="menu-image">
+                    <div class="item-header">
+                        <h3>Filet de daurade en feuille de galette de riz</h3>
+                        <span class="price">$10.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Daurade, fruits de mer hachés, citron, persil, galette de riz, courgette, poivron, sauce citronnée légère</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts -->
+        <section id="desserts" class="menu-section">
+            <h2 class="section-title">🍰 Desserts</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="carte/desserts/sorbet citron menthe.PNG" alt="Sorbet citron-menthe" class="menu-image">
+                    <div class="item-header">
+                        <h3>Sorbet citron-menthe à la tunisienne</h3>
+                        <span class="price">$5.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Citron frais pressé, menthe fraîche ciselée, eau, sucre naturel</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/desserts/yaourt grec aux figues.PNG" alt="Yaourt grec aux figues" class="menu-image">
+                    <div class="item-header">
+                        <h3>Yaourt grec aux figues rôties et miel léger</h3>
+                        <span class="price">$5.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Yaourt grec nature, figues fraîches rôties, miel naturel, amandes effilées</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/desserts/salade de fruit frais.PNG" alt="Salade de fruits frais" class="menu-image">
+                    <div class="item-header">
+                        <h3>Salade de fruits frais au sirop de fleur d'oranger</h3>
+                        <span class="price">$5.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Melon, pomme, poire, fraises, eau de fleur d'oranger, sucre léger</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="carte/desserts/mousse legere.PNG" alt="Mousse légère aux dattes" class="menu-image">
+                    <div class="item-header">
+                        <h3>Mousse légère aux dattes et amandes</h3>
+                        <span class="price">$5.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Dattes mixées, yaourt grec nature, poudre d'amandes, crème légère</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drinks -->
+        <section id="drinks" class="menu-section">
+            <h2 class="section-title">🥤 Boissons</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop" alt="Thé Infusion" class="menu-image">
+                    <div class="item-header">
+                        <h3>Thé Infusion</h3>
+                        <span class="price">$2.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Sélection de thés infusés, menthe, verveine, camomille, infusions naturelles</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop" alt="Café" class="menu-image">
+                    <div class="item-header">
+                        <h3>Café</h3>
+                        <span class="price">$2.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Café 100% Arabica, grains fraîchement moulus, espresso ou allongé</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&h=300&fit=crop" alt="Eau Minérale" class="menu-image">
+                    <div class="item-header">
+                        <h3>Eau Minérale</h3>
+                        <span class="price">$2.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Eau minérale naturelle 100%, source de montagne, plate ou gazeuse</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=400&h=300&fit=crop" alt="Thé Glacé Maison" class="menu-image">
+                    <div class="item-header">
+                        <h3>Thé Glacé Maison Sans Sucre</h3>
+                        <span class="price">$2.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Thé infusé maison, citron frais, menthe, servi bien frais sans sucre ajouté</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9d?w=400&h=300&fit=crop" alt="Eau Pétillante" class="menu-image">
+                    <div class="item-header">
+                        <h3>Eau Pétillante Citron-Menthe</h3>
+                        <span class="price">$2.00</span>
+                    </div>
+                    <div class="item-line"></div>
+                    <div class="ingredients">
+                        <p class="ingredients-title">Ingrédients:</p>
+                        <p>Eau pétillante, citron frais pressé, menthe fraîche, naturellement rafraîchissante</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Hours -->
+        <section id="contact" class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">⏰</div>
+                    <h3>Horaires</h3>
+                    <p>Tous les jours</p>
+                    <p class="highlight-text">10:00 - 22:00</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🚚</div>
+                    <h3>Service de Livraison</h3>
+                    <p>Appelez-nous au</p>
+                    <p class="highlight-text">098 888 888</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="leaf-icon">🌿</span>
+                <span>Verdora</span>
+            </div>
+            <p class="footer-slogan">Le Jardin Secret</p>
+            <p class="footer-text">Cuisine saine, naturelle et délicieuse</p>
+            <p class="footer-copyright">&copy; 2025 Verdora. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,920 @@
+/* ============================================
+   VERDORA - LE JARDIN SECRET
+   Restaurant Website Styles
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES & RESET
+   ============================================ */
+:root {
+    /* Color Palette - Nature Inspired Greens */
+    --primary-green: #2d5016;
+    --secondary-green: #4a7c2e;
+    --accent-green: #6b9d3e;
+    --light-green: #a8d08d;
+    --very-light-green: #e8f5e1;
+    --forest-green: #1a3a0f;
+
+    /* Neutral Colors */
+    --cream: #faf8f3;
+    --white: #ffffff;
+    --dark-gray: #2c2c2c;
+    --light-gray: #f5f5f5;
+    --gold: #d4af37;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(45, 80, 22, 0.1);
+    --shadow-md: 0 4px 20px rgba(45, 80, 22, 0.15);
+    --shadow-lg: 0 8px 30px rgba(45, 80, 22, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--dark-gray);
+    line-height: 1.7;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--very-light-green) 100%);
+    min-height: 100vh;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 50%, var(--accent-green) 100%);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: subtle-move 20s ease-in-out infinite;
+}
+
+@keyframes subtle-move {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 20px); }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    animation: fade-in-up 1s ease-out;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.leaf-icon {
+    font-size: 3rem;
+    animation: rotate-leaf 3s ease-in-out infinite;
+}
+
+@keyframes rotate-leaf {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.restaurant-name {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slogan {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    color: var(--light-green);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.95;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--white);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 3;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    box-shadow: var(--shadow-md);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-green);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--accent-green);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   CONTAINER & SECTIONS
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+}
+
+.menu-section {
+    margin-bottom: var(--spacing-xl);
+    animation: fade-in 0.8s ease-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ============================================
+   MENU BOOK SECTION
+   ============================================ */
+.menu-book-section {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md) 0;
+}
+
+.menu-instruction {
+    text-align: center;
+    color: var(--secondary-green);
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.book-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.book-viewer {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: var(--radius-lg);
+    box-shadow:
+        0 10px 40px rgba(45, 80, 22, 0.15),
+        0 0 0 1px rgba(45, 80, 22, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    border: 4px solid var(--light-green);
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+}
+
+.book-viewer:active {
+    cursor: grabbing;
+}
+
+.pages-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.page-slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+    transition: opacity 0.5s ease;
+    position: relative;
+}
+
+.page-slide.active {
+    opacity: 1;
+}
+
+.page-slide.prev,
+.page-slide.next {
+    opacity: 0.6;
+}
+
+.menu-page-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(1.05) contrast(1.05) saturate(1.1);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.page-slide:not(.active) .menu-page-image {
+    filter: brightness(0.9) contrast(0.95) saturate(0.9);
+}
+
+/* Swipe Arrow Indicators */
+.swipe-indicators {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+    padding: 0 1rem;
+}
+
+.swipe-arrow {
+    width: 50px;
+    height: 50px;
+    background: rgba(107, 157, 62, 0.9);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    pointer-events: all;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.swipe-arrow:hover {
+    background: rgba(74, 124, 46, 1);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.swipe-arrow:active {
+    transform: scale(0.95);
+}
+
+.swipe-arrow.left {
+    opacity: 1;
+}
+
+.swipe-arrow.right {
+    opacity: 1;
+}
+
+/* Page Dots Indicator */
+.page-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem 0 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--light-green);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.dot:hover {
+    background: var(--accent-green);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: var(--accent-green);
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--primary-green);
+    box-shadow: 0 0 10px rgba(107, 157, 62, 0.5);
+}
+
+/* Page Counter */
+.page-counter {
+    text-align: center;
+    padding: 0.5rem 0 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+#current-page {
+    color: var(--accent-green);
+    font-size: 1.4rem;
+}
+
+/* ============================================
+   SPECIAL OFFERS
+   ============================================ */
+.special-offers {
+    margin-bottom: var(--spacing-xl);
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.offer-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 0;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--light-green);
+}
+
+.offer-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover .offer-image {
+    transform: scale(1.05);
+}
+
+.offer-content {
+    padding: var(--spacing-md);
+}
+
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.offer-badge {
+    display: inline-block;
+    background: var(--accent-green);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.offer-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.offer-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    margin: 1rem 0;
+}
+
+.offer-description {
+    color: var(--dark-gray);
+    font-style: italic;
+}
+
+/* Offer Details Section */
+.offer-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    background: var(--very-light-green);
+    border-radius: var(--radius-sm);
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.offer-card:hover .offer-details {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+}
+
+.offer-details-title {
+    font-weight: 700;
+    color: var(--primary-green);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+.offer-item {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.offer-item strong {
+    color: var(--primary-green);
+}
+
+.offer-ingredients {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0.75rem 0;
+}
+
+.offer-note {
+    font-size: 0.85rem;
+    color: var(--secondary-green);
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--light-green);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ============================================
+   MENU ITEMS
+   ============================================ */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.menu-item {
+    background: var(--white);
+    padding: 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--light-green);
+    overflow: hidden;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--accent-green);
+}
+
+.menu-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-image {
+    transform: scale(1.05);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    padding: var(--spacing-md);
+    padding-bottom: 0;
+}
+
+.menu-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--accent-green);
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.item-line {
+    height: 1px;
+    background: linear-gradient(90deg, var(--light-green), transparent);
+    margin-top: 0.5rem;
+    margin-left: var(--spacing-md);
+    margin-right: var(--spacing-md);
+}
+
+/* Ingredients Section */
+.ingredients {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0 var(--spacing-md);
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease, padding 0.4s ease;
+    background: var(--very-light-green);
+    border-radius: var(--radius-sm);
+    padding: 0 1rem;
+}
+
+.menu-item:hover .ingredients {
+    max-height: 200px;
+    opacity: 1;
+    margin: 1rem var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    padding: 1rem;
+}
+
+.ingredients-title {
+    font-weight: 700;
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ingredients p:last-child {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contact-section {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
+    background: linear-gradient(135deg, var(--very-light-green) 0%, var(--white) 100%);
+    border-radius: var(--radius-lg);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+}
+
+.contact-card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--light-green);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+    color: var(--dark-gray);
+    margin: 0.25rem 0;
+}
+
+.highlight-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--forest-green) 100%);
+    color: var(--white);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer-slogan {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--light-green);
+    margin-bottom: 0.5rem;
+}
+
+.footer-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .navbar {
+        gap: 1.5rem;
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        font-size: 0.85rem;
+    }
+
+    .container {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        height: 80vh;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .book-container {
+        padding: var(--spacing-sm);
+    }
+
+    .menu-instruction {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+
+    .swipe-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .page-dots {
+        gap: 0.5rem;
+        padding: 1rem 0 0.5rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dot.active {
+        width: 12px;
+        height: 12px;
+    }
+
+    .page-counter {
+        font-size: 1rem;
+    }
+
+    #current-page {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurant-name {
+        font-size: 2.5rem;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        gap: 1rem;
+    }
+
+    .navbar a {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================
+   ANIMATIONS & UTILITIES
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Smooth scrolling for section links */
+section {
+    scroll-margin-top: 80px;
+}
